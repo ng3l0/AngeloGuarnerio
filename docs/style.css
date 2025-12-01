@@ -1,0 +1,14 @@
+/* Minimal styles for the trial site */
+:root{
+  --bg:#f7f9fb; --fg:#0b1220; --muted:#4b5563; --accent:#0366d6;
+}
+html,body{height:100%;}
+body{margin:0; padding:2rem; background:var(--bg); color:var(--fg);}
+header{margin-bottom:1.25rem}
+h1{margin:0 0 .25rem 0; font-size:1.6rem}
+p{color:var(--muted)}
+main{max-width:56rem}
+section{background:white; padding:1rem; border-radius:8px; box-shadow:0 1px 3px rgba(11,18,32,0.06); margin-bottom:1rem}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+footer{font-size:.9rem; color:var(--muted); margin-top:1rem}
