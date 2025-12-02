@@ -1,38 +1,97 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AngeloGuarnerio — Trial GitHub Pages</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Trial GitHub Pages site for AngeloGuarnerio">
-  <meta name="author" content="ng3l0">
-  <style>
-    /* small inline fallback if external CSS fails */
-    body{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Welcome — Trial GitHub Pages</h1>
-    <p>A tiny test site generated automatically.</p>
-  </header>
-  <main>
-    <section>
-      <h2>About</h2>
-      <p>This repository contains a minimal site to test GitHub Pages using the <code>docs/</code> folder.</p>
-    </section>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Angelo Guarnerio — Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Portfolio of Angelo Guarnerio" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="container header-inner">
+          <div class="brand">
+            <h1>Angelo Guarnerio</h1>
+            <p class="subtitle">Software, Creative Projects & Experiments</p>
+          </div>
+          <nav class="nav">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-    <section>
-      <h2>Quick links</h2>
-      <ul>
-        <li><a href="https://github.com/ng3l0/AngeloGuarnerio">Repository on GitHub</a></li>
-        <li><a href="404.html">Sample 404 page</a></li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>Generated for testing — not production-ready.</p>
-  </footer>
-</body>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-left">
+            <h2>Hello — I’m Angelo</h2>
+            <p class="lead">I build projects across software, web, and creative coding. Below are grouped blocks with projects per topic so you can quickly scan my work.</p>
+            <p class="cta-row"><a class="btn" href="#projects">See projects</a></p>
+          </div>
+          <div class="hero-right">
+            <div class="profile-wrap">
+              <img src="assets/profile.svg" alt="Profile photo" class="profile-photo" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <main class="container" id="projects">
+        <!-- Topic Block: Web -->
+        <section class="block">
+          <header class="block-header"><h3>Web & Frontend</h3><p class="block-sub">Sites, components, UI experiments</p></header>
+          <div class="cards">
+            <article class="card">
+              <h4><a href="#">Personal Site Template</a></h4>
+              <p class="muted">A responsive template with CSS variables and component patterns.</p>
+            </article>
+            <article class="card">
+              <h4><a href="#">Interactive SVG Dashboard</a></h4>
+              <p class="muted">Data-driven visualization using SVG & vanilla JS.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Topic Block: Tools -->
+        <section class="block">
+          <header class="block-header"><h3>Tools & Libraries</h3><p class="block-sub">CLI tools, utilities, small libraries</p></header>
+          <div class="cards">
+            <article class="card">
+              <h4><a href="#">Build Helper</a></h4>
+              <p class="muted">A small Node.js utility to streamline build steps.</p>
+            </article>
+            <article class="card">
+              <h4><a href="#">Formatter Plugin</a></h4>
+              <p class="muted">A plugin for code formatting workflows.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Topic Block: Experiments -->
+        <section class="block">
+          <header class="block-header"><h3>Creative & Experiments</h3><p class="block-sub">Generative art, prototypes, small games</p></header>
+          <div class="cards">
+            <article class="card">
+              <h4><a href="#">Generative Waves</a></h4>
+              <p class="muted">A canvas-based generative composition using perlin noise.</p>
+            </article>
+            <article class="card">
+              <h4><a href="#">Mini Game Prototype</a></h4>
+              <p class="muted">A small browser game exploring mechanics and polish.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer container" id="contact">
+        <div>
+          <strong>Contact</strong>
+          <p class="muted">Replace this with your email or social links.</p>
+        </div>
+        <small class="muted">© Angelo Guarnerio — Portfolio</small>
+      </footer>
+    </div>
+  </body>
 </html>
