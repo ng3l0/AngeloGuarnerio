@@ -12,7 +12,7 @@ Files changed/added:
 
 How to customize:
 
-- Replace the profile image: open `assets/profile.svg` and replace it with your own image named `profile.svg` (or update the `<img>` src in `index.html`). For an actual photo, add a JPEG/PNG and change `src` to `assets/your-photo.jpg`.
+- Replace the profile image: open `assets/profile.JPG` and replace it with your own image named `profile.svg` (or update the `<img>` src in `index.html`). For an actual photo, add a JPEG/PNG and change `src` to `assets/your-photo.jpg`.
 - Edit project blocks in `index.html` under the `<main id="projects">` section. Each `.block` groups projects for a topic.
 
 Publish:
