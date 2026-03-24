@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Articolo — Angelo Guarnerio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+    <!-- Syntax highlighting for code blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" />
+    <style>
+      .post-container { flex: 1; padding: 52px 0 90px }
+
+      .post-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 2.5rem;
+        transition: color 0.18s;
+      }
+      .post-back:hover { color: var(--blue) }
+      .post-back svg { flex-shrink: 0 }
+
+      .post-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border) }
+      .post-header h1 {
+        font-size: clamp(1.7rem, 4vw, 2.4rem);
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        line-height: 1.25;
+        color: var(--fg);
+        margin-bottom: 0.7rem;
+      }
+      .post-meta { color: var(--muted); font-size: 0.85rem; }
+
+      /* ── Typeset for markdown body ── */
+      .post-body {
+        max-width: 680px;
+        font-size: 1.05rem;
+        line-height: 1.87;
+        color: var(--fg-soft);
+      }
+      .post-body h2 {
+        font-size: 1.45rem; font-weight: 700;
+        letter-spacing: -0.025em; color: var(--fg);
+        margin: 2.8rem 0 .75rem;
+      }
+      .post-body h3 {
+        font-size: 1.15rem; font-weight: 600;
+        color: var(--fg); margin: 2.2rem 0 .6rem;
+      }
+      .post-body h4 { font-size: 1rem; font-weight: 600; color: var(--fg); margin: 1.8rem 0 .5rem }
+      .post-body p  { margin-bottom: 1.35rem }
+      .post-body ul, .post-body ol { margin: 0 0 1.35rem 1.6rem }
+      .post-body li { margin-bottom: .45rem }
+      .post-body a  { color: var(--blue); text-decoration: underline; text-underline-offset: 3px }
+      .post-body a:hover { color: var(--blue-dark) }
+      .post-body strong { color: var(--fg); font-weight: 600 }
+      .post-body em { font-style: italic }
+      .post-body hr { border: none; border-top: 1px solid var(--border); margin: 2.8rem 0 }
+      .post-body img { max-width: 100%; border-radius: 10px; margin: 1.2rem 0; display: block }
+      .post-body blockquote {
+        border-left: 3px solid var(--blue);
+        margin: 1.8rem 0;
+        padding: .5rem 0 .5rem 1.3rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+      .post-body blockquote p { margin-bottom: 0 }
+      /* Inline code */
+      .post-body :not(pre) > code {
+        background: #f1f5f9;
+        border-radius: 4px;
+        padding: 2px 6px;
+        font-size: 0.875em;
+        font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+        color: #c7254e;
+      }
+      /* Code blocks */
+      .post-body pre {
+        background: #0f172a;
+        border-radius: 10px;
+        padding: 1.2rem 1.4rem;
+        overflow-x: auto;
+        margin: 1.6rem 0;
+        border: 1px solid rgba(255,255,255,0.06);
+      }
+      .post-body pre code {
+        background: none !important;
+        color: #e2e8f0;
+        padding: 0 !important;
+        font-size: 0.875rem;
+        font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+        border-radius: 0;
+      }
+
+      /* ── Loading / error states ── */
+      .post-state {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 0.95rem;
+        padding: 40px 0;
+      }
+      .spinner {
+        width: 18px; height: 18px;
+        border: 2px solid var(--border);
+        border-top-color: var(--blue);
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+        flex-shrink: 0;
+      }
+      @keyframes spin { to { transform: rotate(360deg) } }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+
+      <header class="site-header">
+        <div class="container header-inner">
+          <div class="brand">
+            <h1><a href="../" style="color:inherit;text-decoration:none">Angelo Guarnerio</a></h1>
+          </div>
+          <nav class="nav">
+            <a href="../#projects">Projects</a>
+            <a href="../#about">About</a>
+            <a href="../#contact">Contact</a>
+            <a href="../blog/" style="color:#fff; border-bottom:2px solid var(--blue); padding-bottom:2px">Blog</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="post-container">
+        <div class="container">
+
+          <a href="index.html" class="post-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            Tutti gli articoli
+          </a>
+
+          <!-- Populated by JS -->
+          <div id="post-wrapper">
+            <div class="post-state">
+              <div class="spinner"></div>
+              Caricamento articolo…
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            <strong>Get in touch</strong>
+            <p class="muted"><a href="mailto:angelo.guarnerio@gmail.com">angelo.guarnerio@gmail.com</a></p>
+          </div>
+          <small class="muted">© Angelo Guarnerio</small>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+    <!-- Syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+      const wrapper = document.getElementById('post-wrapper');
+
+      // Leggi il parametro ?post= dall'URL
+      const slug = new URLSearchParams(window.location.search).get('post');
+
+      if (!slug) {
+        // Nessun articolo specificato → torna al blog
+        window.location.replace('index.html');
+      } else {
+        loadPost(slug);
+      }
+
+      async function loadPost(slug) {
+        try {
+          // Carica metadati (per data e descrizione) e markdown in parallelo
+          const [metaRes, mdRes] = await Promise.all([
+            fetch('../posts/index.json'),
+            fetch(`../posts/${slug}.md`)
+          ]);
+
+          if (!mdRes.ok) throw new Error('Articolo non trovato');
+
+          const posts = await metaRes.json().catch(() => []);
+          const meta  = posts.find(p => p.slug === slug) || {};
+          const mdText = await mdRes.text();
+
+          // Configura marked
+          marked.use({ breaks: true, gfm: true });
+
+          // Rimuovi l'eventuale H1 iniziale dal body (lo mostriamo nel post-header)
+          const lines = mdText.split('\n');
+          const titleFromMd = lines[0].startsWith('# ') ? lines[0].replace(/^#\s+/, '').trim() : null;
+          const bodyMd = titleFromMd ? lines.slice(1).join('\n').trimStart() : mdText;
+
+          const title = meta.title || titleFromMd || 'Articolo';
+          const dateStr = meta.date ? formatDate(meta.date) : '';
+
+          // Aggiorna il <title> della pagina
+          document.title = `${title} — Angelo Guarnerio`;
+
+          // Renderizza
+          wrapper.innerHTML = `
+            <header class="post-header">
+              <h1>${escapeHtml(title)}</h1>
+              ${dateStr ? `<p class="post-meta">${dateStr}</p>` : ''}
+            </header>
+            <div class="post-body" id="post-body">
+              ${marked.parse(bodyMd)}
+            </div>
+          `;
+
+          // Applica syntax highlighting
+          document.querySelectorAll('.post-body pre code').forEach(el => hljs.highlightElement(el));
+
+        } catch (err) {
+          wrapper.innerHTML = `
+            <div class="post-state">
+              Articolo non trovato. <a href="index.html" style="color:var(--blue);margin-left:6px">Torna al blog →</a>
+            </div>
+          `;
+        }
+      }
+
+      function formatDate(iso) {
+        const d = new Date(iso);
+        return d.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' });
+      }
+
+      function escapeHtml(s) {
+        return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      }
+    </script>
+  </body>
+</html>

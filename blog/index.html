@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blog — Angelo Guarnerio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      /* ── Coming Soon ── */
+      .cs-section {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 0 100px;
+        background:
+          radial-gradient(ellipse 70% 55% at 60% 50%, rgba(91,95,207,0.2), transparent),
+          linear-gradient(140deg, var(--navy) 0%, #0d2d6e 55%, #1558c0 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      .cs-section::after {
+        content: '';
+        position: absolute;
+        bottom: -1px; left: 0; right: 0;
+        height: 70px;
+        background: linear-gradient(to bottom, transparent, var(--surface));
+        pointer-events: none;
+      }
+      .cs-inner { text-align: center; color: #fff; position: relative; z-index: 1; }
+      .cs-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 100px;
+        padding: 5px 14px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        color: rgba(255,255,255,0.8);
+      }
+      .cs-dot {
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: #60a5fa;
+        animation: blink 2s ease-in-out infinite;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50%       { opacity: 0.3; transform: scale(0.75); }
+      }
+      .cs-title {
+        font-size: clamp(3.5rem, 8vw, 5.5rem);
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: #fff;
+        margin-bottom: 1.2rem;
+      }
+      .cs-subtitle {
+        font-size: 1.1rem;
+        color: rgba(255,255,255,0.65);
+        max-width: 420px;
+        margin: 0 auto 2.4rem;
+        line-height: 1.75;
+        font-style: italic;
+      }
+      .cs-divider {
+        width: 40px; height: 2px;
+        background: rgba(255,255,255,0.18);
+        margin: 0 auto 2.4rem;
+        border-radius: 2px;
+      }
+      .btn-ghost {
+        display: inline-block;
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 9px;
+        padding: .6rem 1.3rem;
+        transition: all 0.18s;
+      }
+      .btn-ghost:hover {
+        color: #fff;
+        border-color: rgba(255,255,255,0.45);
+        background: rgba(255,255,255,0.07);
+      }
+
+      /* ── Posts listing ── */
+      .posts-section { flex: 1; padding: 60px 0 80px }
+      .posts-header { margin-bottom: 36px }
+      .posts-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: var(--fg);
+        margin-bottom: 6px;
+      }
+      .posts-header p { color: var(--muted) }
+      .post-date {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 7px;
+      }
+      .read-more {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--blue);
+        text-decoration: none;
+      }
+      .read-more:hover { text-decoration: underline }
+      .no-posts {
+        color: var(--muted);
+        font-style: italic;
+        padding: 24px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+
+      <header class="site-header">
+        <div class="container header-inner">
+          <div class="brand">
+            <h1><a href="../" style="color:inherit;text-decoration:none">Angelo Guarnerio</a></h1>
+          </div>
+          <nav class="nav">
+            <a href="../#projects">Projects</a>
+            <a href="../#about">About</a>
+            <a href="../#contact">Contact</a>
+            <a href="../blog/" style="color:#fff; border-bottom:2px solid var(--blue); padding-bottom:2px">Blog</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ══════════════════════════════════════════════
+           SEZIONE COMING SOON
+           Quando sei pronto, rimuovi tutto questo blocco
+           e togli "hidden" dalla sezione posts-section.
+      ══════════════════════════════════════════════ -->
+      <section class="cs-section" id="coming-soon">
+        <div class="cs-inner">
+          <div class="cs-badge">
+            <span class="cs-dot"></span>
+            In arrivo
+          </div>
+          <h2 class="cs-title">Blog</h2>
+          <p class="cs-subtitle">Sto raccogliendo pensieri e storie sulle mie passioni.<br>Torna presto.</p>
+          <div class="cs-divider"></div>
+          <a href="../" class="btn-ghost">← Torna alla home</a>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════
+           SEZIONE ARTICOLI (ora nascosta)
+           Quando sei pronto, rimuovi il blocco sopra
+           e togli l'attributo "hidden" da questa riga:
+      ══════════════════════════════════════════════ -->
+      <div class="posts-section container" id="posts-section" hidden>
+        <div class="posts-header">
+          <h2>Blog</h2>
+          <p>Pensieri, note e storie sulle mie passioni.</p>
+        </div>
+        <div class="cards" id="posts-grid">
+          <!-- Gli articoli vengono caricati automaticamente da posts/index.json -->
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            <strong>Get in touch</strong>
+            <p class="muted"><a href="mailto:angelo.guarnerio@gmail.com">angelo.guarnerio@gmail.com</a></p>
+          </div>
+          <small class="muted">© Angelo Guarnerio</small>
+        </div>
+      </footer>
+
+    </div>
+
+    <script>
+      // ═══════════════════════════════════════════════
+      // Carica la lista degli articoli da posts/index.json
+      // (viene eseguito solo quando la sezione posts è visibile)
+      // ═══════════════════════════════════════════════
+      const postsSection = document.getElementById('posts-section');
+
+      if (!postsSection.hidden) {
+        fetch('../posts/index.json')
+          .then(r => r.json())
+          .then(posts => {
+            const grid = document.getElementById('posts-grid');
+            if (!posts.length) {
+              grid.innerHTML = '<p class="no-posts">Nessun articolo pubblicato ancora.</p>';
+              return;
+            }
+            // Ordina dal più recente al meno recente
+            posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+            grid.innerHTML = posts.map(p => `
+              <article class="card">
+                <p class="post-date">${formatDate(p.date)}</p>
+                <h4><a href="post.html?post=${p.slug}">${p.title}</a></h4>
+                <p class="muted">${p.description}</p>
+                <a href="post.html?post=${p.slug}" class="read-more">Leggi l'articolo →</a>
+              </article>
+            `).join('');
+          })
+          .catch(() => {
+            document.getElementById('posts-grid').innerHTML =
+              '<p class="no-posts">Impossibile caricare gli articoli. Riprova tra poco.</p>';
+          });
+      }
+
+      function formatDate(iso) {
+        const d = new Date(iso);
+        return d.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' });
+      }
+    </script>
+  </body>
+</html>
