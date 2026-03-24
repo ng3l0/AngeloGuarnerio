@@ -4,16 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Angelo Guarnerio — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <meta name="description" content="Portfolio of Angelo Guarnerio" />
+    <meta name="description" content="Portfolio of Angelo Guarnerio — Biomedical Engineering student at Politecnico di Milano, focused on wearable electronics, IoT, and Edge AI." />
   </head>
   <body>
     <div class="page">
+
       <header class="site-header">
         <div class="container header-inner">
           <div class="brand">
             <h1>Angelo Guarnerio</h1>
-            <p class="subtitle"> </p>
           </div>
           <nav class="nav">
             <a href="#projects">Projects</a>
@@ -23,13 +26,11 @@
         </div>
       </header>
 
-      <section class="hero">
+      <section class="hero" id="about">
         <div class="container hero-inner">
           <div class="hero-left">
-            <h2>Hello — I’m Angelo :) </h2>
-            <p class="lead">I'm a Biomedical Engineering student at Politecnico di Milano. 
-              My passion lies in wearable electronics, IoT, and Edge AI, exploring how these technologies can drive innovation and real-world impact. 
-              Below are grouped blocks with projects per topic so you can quickly scan my work.</p>
+            <h2>Hello — I'm Angelo</h2>
+            <p class="lead">Biomedical Engineering student at Politecnico di Milano, with a focus on wearable electronics, IoT, and Edge AI. I build systems where hardware meets data — from biosignal processing to on-device machine learning.</p>
             <p class="cta-row"><a class="btn" href="#projects">See projects</a></p>
           </div>
           <div class="hero-right">
@@ -41,97 +42,112 @@
       </section>
 
       <main class="container" id="projects">
-        <!-- Topic Block: Research Activities -->
+
+        <!-- Research Activities -->
         <section class="block">
-          <header class="block-header"><h3>Research Activities</h3><p class="block-sub">Wearable devices, Time Series, Biomedical Signals</p></header>
+          <header class="block-header">
+            <h3>Research Activities</h3>
+            <p class="block-sub">Wearable devices · Time series · Biomedical signals</p>
+          </header>
           <div class="cards">
 
             <article class="card">
               <h4>
                 <a href="https://ieeexplore.ieee.org/document/10636003" target="_blank" rel="noopener noreferrer">
-                  Bacco, a Tool for Holistic Monitoring
-                  <!-- piccola icona esterna (opzionale) -->
-                  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:middle; margin-left:6px">
-                    <path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"></path>
+                  Bacco — A Tool for Holistic Monitoring
+                  <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" style="vertical-align:middle;margin-left:5px;opacity:0.55">
+                    <path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"/>
                   </svg>
                 </a>
               </h4>
-              <p class="muted">An iOS application designed to enhance users’
-                comprehensive self-assessment by developing an intuitive daily index based on their individual behaviors
-                and physiological parameters.</p>
+              <p class="muted">An iOS application for holistic self-monitoring that builds a daily wellness index from individual behaviors and physiological parameters, giving users an intuitive picture of their overall well-being.</p>
             </article>
 
             <article class="card">
               <h4>
-                <a href=# target="_blank" rel="noopener noreferrer">
-                  Stress Detection through foundational models and federated learning               </a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  Stress Detection via Foundation Models and Federated Learning
+                </a>
               </h4>
-              <p class="muted">I'm currently carry out a project o build a stress detection model based on wearable devices data</p>
+              <p class="muted">An ongoing research project combining foundation models with federated learning to detect stress from wearable sensor data — preserving user privacy by keeping raw data on-device while training a shared global model.</p>
             </article>
 
             <article class="card">
               <h4>
                 <a href="https://github.com/ng3l0/ZenitDemo" target="_blank" rel="noopener noreferrer">
-                  Zenit, the schedule that cares                </a>
+                  Zenit — The Schedule That Cares
+                </a>
               </h4>
-              <p class="muted">My role in this project was to build a forecasting timeseries of stress base on Garmin device data</p>
+              <p class="muted">A stress-aware scheduling application. My contribution was a forecasting pipeline that predicts stress trends from Garmin device data, helping users plan their day around their energy levels.</p>
             </article>
-            
+
           </div>
         </section>
 
-        <!-- Topic Block: Hackathons -->
+        <!-- Hackathons -->
         <section class="block">
-          <header class="block-header"><h3>Hackathons Projects</h3><p class="block-sub">List of repositories from my last hacks </p></header>
+          <header class="block-header">
+            <h3>Hackathon Projects</h3>
+            <p class="block-sub">Projects built under pressure at competitions across Europe</p>
+          </header>
           <div class="cards">
 
             <article class="card">
               <h4>
                 <a href="https://github.com/danielerussica/Reveal-the-hidden-patterns-of-care" target="_blank" rel="noopener noreferrer">
-                  Reveal the hidden patterns of care                </a>
+                  Reveal the Hidden Patterns of Care
+                </a>
               </h4>
-              <p class="muted">This project was carried out during the Swiss AI Hackathon in Zurich. It consists in a dashboard to help insurance company to reveal hidden patterns in the healthcare sector</p>
+              <p class="muted">Built at the Swiss AI Hackathon in Zurich, this dashboard helps insurance companies surface hidden patterns in healthcare costs and care utilization through unsupervised learning and interactive visualizations.</p>
             </article>
 
             <article class="card">
               <h4>
                 <a href="https://github.com/filippostaffoni/UNCCD-G20_STARTHACK2025_SRTG" target="_blank" rel="noopener noreferrer">
-                  G20_STARTHACK2025                </a>
+                  G20 STARTHACK 2025
+                </a>
               </h4>
-              <p class="muted">The goal of this project was to predict how climate changes could affect the Sahel region</p>
+              <p class="muted">A climate-impact forecasting tool developed at StartHack 2025 for the UNCCD G20 challenge, modeling how climate change could affect agricultural stability and desertification in the Sahel region.</p>
             </article>
 
           </div>
         </section>
 
-        <!-- Topic Block: University projects -->
+        <!-- University Projects -->
         <section class="block">
-          <header class="block-header"><h3>University Projects</h3><p class="block-sub">I like university course with projects</p></header>
+          <header class="block-header">
+            <h3>University Projects</h3>
+            <p class="block-sub">Selected coursework with an engineering and data focus</p>
+          </header>
           <div class="cards">
+
             <article class="card">
               <h4><a href="#">Edge AI</a></h4>
-              <p class="muted">I built a ML model for smartglasses which goal was to recognized based on sounds where the user is between different locations.
-                This project was carried out with Luxottica. (The code can't be shared)</p>
+              <p class="muted">An ML model for smart glasses that classifies acoustic environments, identifying the user's location from ambient sound alone. Developed in collaboration with Luxottica. (Source code is proprietary.)</p>
             </article>
 
             <article class="card">
-              <h4><a href="https://github.com/ng3l0/Progetto-SQL-GUI"> 
-                Medical Informatics</a></h4>
-              <p class="muted">The project is an interactive dashboard for sleep apnea practitioners.</p>
+              <h4>
+                <a href="https://github.com/ng3l0/Progetto-SQL-GUI">Medical Informatics</a>
+              </h4>
+              <p class="muted">An interactive clinical dashboard for sleep apnea practitioners, enabling structured data exploration and supporting evidence-based patient management.</p>
             </article>
+
           </div>
         </section>
+
       </main>
 
-      <footer class="site-footer container" id="contact">
-        <div>
-          <strong>Contact</strong>
-          <p class="muted">
-            <a href="mailto:angelo.guarnerio@gmail.com">angelo.guarnerio@gmail.com</a>
-          </p>
+      <footer class="site-footer" id="contact">
+        <div class="container footer-inner">
+          <div>
+            <strong>Get in touch</strong>
+            <p class="muted"><a href="mailto:angelo.guarnerio@gmail.com">angelo.guarnerio@gmail.com</a></p>
+          </div>
+          <small class="muted">© Angelo Guarnerio</small>
         </div>
-        <small class="muted">© Angelo Guarnerio — Portfolio</small>
       </footer>
+
     </div>
   </body>
 </html>
