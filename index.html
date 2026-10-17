@@ -3,16 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Angelo Guarnerio — Biomedical Engineer</title>
-  <meta name="description" content="Angelo Guarnerio, a biomedical engineer who turns physiological signals from wearables (heart on the wrist, brain in the ear) into models of mental state. MSc thesis at IDUN Technologies, Zurich.">
+  <title>Angelo Guarnerio — Biomedical Engineer &amp; Data Scientist</title>
+  <meta name="description" content="Angelo Guarnerio is a biomedical engineer and data scientist connecting physiological signals from wearables (wrist and in-ear EEG) to mental states. MSc thesis at IDUN Technologies (ETH Zurich spin-off), researcher at NECSTLab, Politecnico di Milano.">
+  <meta name="author" content="Angelo Guarnerio">
   <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://ng3l0.github.io/AngeloGuarnerio/">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Angelo Guarnerio — Signals in. States out.">
-  <meta property="og:description" content="Biomedical engineer working on wearables, biosignals and mental-state decoding.">
-  <meta property="og:image" content="assets/img/og.jpg">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://ng3l0.github.io/AngeloGuarnerio/">
+  <meta property="og:title" content="Angelo Guarnerio — Biomedical Engineer &amp; Data Scientist">
+  <meta property="og:description" content="Connecting physiological signals from wearables to mental states. MSc thesis at IDUN Technologies, Zurich.">
+  <meta property="og:image" content="https://ng3l0.github.io/AngeloGuarnerio/assets/img/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Angelo Guarnerio",
+    "url": "https://ng3l0.github.io/AngeloGuarnerio/",
+    "image": "https://ng3l0.github.io/AngeloGuarnerio/assets/img/angelo.jpg",
+    "jobTitle": "Biomedical Engineer and Data Scientist",
+    "email": "mailto:angelo.guarnerio@gmail.com",
+    "worksFor": { "@type": "Organization", "name": "IDUN Technologies" },
+    "affiliation": { "@type": "Organization", "name": "NECSTLab, Politecnico di Milano" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Politecnico di Milano" },
+    "knowsAbout": ["Wearable biosignals", "Heart-rate variability", "EEG", "Stress detection", "Machine learning", "Foundation models", "Federated learning"],
+    "sameAs": ["https://www.linkedin.com/in/angelo-guarnerio", "https://github.com/ng3l0"]
+  }
+  </script>
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,9 +44,10 @@
 <body>
 
 <!-- ================================================================ NAV -->
+<a class="skip" href="#main">Skip to content</a>
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="#top" aria-label="Angelo Guarnerio, back to top">
+    <a class="brand" href="#main" aria-label="Angelo Guarnerio, back to top">
       <img class="brand-mark" src="assets/favicon.svg" alt="">
       Angelo Guarnerio
     </a>
@@ -35,7 +56,7 @@
       <svg class="i i-close"><use href="assets/icons.svg#x"/></svg>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#now"><svg class="i"><use href="assets/icons.svg#pin"/></svg>Now</a></li>
+      <li><a href="#news"><svg class="i"><use href="assets/icons.svg#clock"/></svg>News</a></li>
       <li><a href="#research"><svg class="i"><use href="assets/icons.svg#flask"/></svg>Research</a></li>
       <li><a href="#projects"><svg class="i"><use href="assets/icons.svg#code"/></svg>Projects</a></li>
       <li><a href="#publications"><svg class="i"><use href="assets/icons.svg#book"/></svg>Publications</a></li>
@@ -46,40 +67,117 @@
   </div>
 </header>
 
-<main id="top">
+<main id="main">
 
-<!-- ================================================================ HERO -->
-<section class="hero" aria-label="Introduction">
-  <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
-  <div class="wrap hero-content">
-    <a class="pill" href="#now" data-reveal>
-      <span class="pill-dot" aria-hidden="true"></span>
-      <span>Now: <b><span class="hide-sm">MSc thesis at </span>IDUN Technologies</b>, Zurich</span>
-    </a>
-    <h1 data-reveal style="--d:.08s">
-      <span class="line">Signals in.</span>
-      <span class="line grad">States out.</span>
-    </h1>
-    <p class="sub" data-reveal style="--d:.16s">
-      I'm Angelo, a biomedical engineer who turns physiological signals from wearables, from
-      <span class="c-heart">heartbeats on the wrist</span> to <span class="c-brain">brainwaves in the ear</span>,
-      into <span class="c-state">models of how people feel</span>.
-    </p>
-    <div class="hero-cta" data-reveal style="--d:.24s">
-      <a class="btn btn-primary" href="#research">Explore the work <svg class="i"><use href="assets/icons.svg#arrow-down"/></svg></a>
-      <a class="btn btn-ghost" href="#about">Meet the human <svg class="i"><use href="assets/icons.svg#arrow-right"/></svg></a>
+<!-- ================================================================ INTRO -->
+<section class="intro" id="intro" aria-label="Introduction">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="intro-copy">
+        <div class="intro-meta" data-reveal>
+          <a class="status" href="#now"><span class="pill-dot" aria-hidden="true"></span>Now at <b>IDUN Technologies</b></a>
+          <span class="loc"><svg class="i"><use href="assets/icons.svg#pin"/></svg>Zurich, Switzerland</span>
+        </div>
+        <h1 data-reveal style="--d:.05s">Angelo Guarnerio</h1>
+        <p class="role grad" data-reveal style="--d:.1s">Biomedical Engineer &amp; Data Scientist</p>
+        <p class="lead" data-reveal style="--d:.15s">
+          I connect <span class="c-heart">physiological signals</span> to <span class="c-brain">mental states</span>,
+          applying machine learning to data from wearables, from the wrist to the brain.
+        </p>
+        <p class="bio" data-reveal style="--d:.2s">
+          I'm writing my MSc thesis at <strong>IDUN Technologies</strong>, an ETH Zurich spin-off, doing data science on
+          proprietary algorithms that estimate mental state from in-ear EEG. Since 2024 I've also been a student researcher at
+          <strong>NECSTLab, Politecnico di Milano</strong>, working on stress detection from wearable data, with two IEEE papers so far.
+        </p>
+        <div class="intro-cta" data-reveal style="--d:.25s">
+          <a class="btn btn-primary" href="mailto:angelo.guarnerio@gmail.com"><svg class="i"><use href="assets/icons.svg#mail"/></svg>angelo.guarnerio@gmail.com</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/angelo-guarnerio" target="_blank" rel="noopener"><svg class="i"><use href="assets/icons.svg#linkedin"/></svg>LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/ng3l0" target="_blank" rel="noopener"><svg class="i"><use href="assets/icons.svg#github"/></svg>GitHub</a>
+        </div>
+        <div class="interests" data-reveal style="--d:.3s">
+          <span class="interests-label">Research interests</span>
+          <ul class="chips" aria-label="Research interests">
+            <li class="chip"><svg class="i"><use href="assets/icons.svg#watch"/></svg>Wearable biosignals</li>
+            <li class="chip"><svg class="i"><use href="assets/icons.svg#heart-pulse"/></svg>Heart-rate variability</li>
+            <li class="chip"><svg class="i"><use href="assets/icons.svg#ear"/></svg>In-ear EEG</li>
+            <li class="chip"><svg class="i"><use href="assets/icons.svg#gauge"/></svg>Stress &amp; mental-state detection</li>
+            <li class="chip"><svg class="i"><use href="assets/icons.svg#sparkles"/></svg>Foundation models</li>
+            <li class="chip"><svg class="i"><use href="assets/icons.svg#shield"/></svg>Federated learning</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="intro-photo" data-reveal style="--d:.1s">
+        <img src="assets/img/angelo.jpg" alt="Portrait of Angelo Guarnerio holding his Biomedical Engineering diploma from Politecnico di Milano" width="960" height="1200" fetchpriority="high">
+        <figcaption><svg class="i"><use href="assets/icons.svg#cap"/></svg>BSc graduation · Politecnico di Milano</figcaption>
+      </figure>
     </div>
-  </div>
-  <div class="hud" aria-hidden="true">
-    <span class="hud-item heart"><svg class="i"><use href="assets/icons.svg#heart-pulse"/></svg>ECG · wrist <b id="hud-hr">62 bpm</b></span>
-    <span class="hud-item brain"><svg class="i"><use href="assets/icons.svg#brain"/></svg>EEG · in-ear <b id="hud-alpha">α 10.1 Hz</b></span>
-    <span class="hud-item state"><svg class="i"><use href="assets/icons.svg#sparkles"/></svg>state · <b id="hud-state">calm 0.71</b></span>
+
+    <ul class="stats highlights" aria-label="Highlights">
+      <li class="stat" data-reveal>
+        <span class="i-badge brain"><svg class="i"><use href="assets/icons.svg#briefcase"/></svg></span>
+        <div class="num">Now</div>
+        <p>MSc thesis in data science at IDUN Technologies, Zurich</p>
+      </li>
+      <li class="stat" data-reveal style="--d:.06s">
+        <span class="i-badge state"><svg class="i"><use href="assets/icons.svg#flask"/></svg></span>
+        <div class="num"><span data-count="2">2</span><sup>+</sup></div>
+        <p>years of research at NECSTLab, Politecnico di Milano</p>
+      </li>
+      <li class="stat" data-reveal style="--d:.12s">
+        <span class="i-badge calm"><svg class="i"><use href="assets/icons.svg#file-text"/></svg></span>
+        <div class="num" data-count="2">2</div>
+        <p>IEEE publications: EMBC 2026 and STAR 2024</p>
+      </li>
+      <li class="stat" data-reveal style="--d:.18s">
+        <span class="i-badge warm"><svg class="i"><use href="assets/icons.svg#trophy"/></svg></span>
+        <div class="num"><span data-count="3">3</span><sup>rd</sup></div>
+        <p>place in a competition hosted by Bending Spoons</p>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- ================================================================ STATEMENT -->
-<section class="statement" aria-label="What I do">
+<!-- ================================================================ NEWS -->
+<section class="section news" id="news">
   <div class="wrap">
+    <header class="section-head" data-reveal>
+      <span class="eyebrow"><svg class="i"><use href="assets/icons.svg#clock"/></svg>Latest news</span>
+      <h2 class="headline">What's new.</h2>
+    </header>
+    <ol class="news-list">
+      <li data-reveal>
+        <span class="when now">Now</span>
+        <span class="i-badge brain"><svg class="i"><use href="assets/icons.svg#briefcase"/></svg></span>
+        <p><strong>MSc thesis at IDUN Technologies</strong> in Zurich: data science on mental-state algorithms from in-ear EEG.</p>
+      </li>
+      <li data-reveal>
+        <span class="when">2026</span>
+        <span class="i-badge calm"><svg class="i"><use href="assets/icons.svg#file-text"/></svg></span>
+        <p><strong>Paper published at IEEE EMBC 2026:</strong> <em>Embedding Based Learning for Stress Assessment from Wearable Time Series</em>. <a class="link" href="#publications">Details <svg class="i"><use href="assets/icons.svg#arrow-right"/></svg></a></p>
+      </li>
+      <li data-reveal>
+        <span class="when">2025</span>
+        <span class="i-badge warm"><svg class="i"><use href="assets/icons.svg#rocket"/></svg></span>
+        <p><strong>START Hack 2025:</strong> a desertification-forecasting tool for the UNCCD G20 challenge.</p>
+      </li>
+      <li data-reveal>
+        <span class="when">2024</span>
+        <span class="i-badge calm"><svg class="i"><use href="assets/icons.svg#file-text"/></svg></span>
+        <p><strong>BACCO published at IEEE STAR 2024</strong>, an iOS tool for holistic wellness monitoring.</p>
+      </li>
+      <li data-reveal>
+        <span class="when">2024</span>
+        <span class="i-badge heart"><svg class="i"><use href="assets/icons.svg#cap"/></svg></span>
+        <p><strong>BSc in Biomedical Engineering</strong> from Politecnico di Milano.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================================================================ FOCUS -->
+<section class="section focus" id="focus" aria-label="Research focus">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal><svg class="i"><use href="assets/icons.svg#wave"/></svg>Research focus</span>
     <p class="words" id="statement">
       The body is constantly reporting on the mind.
       A <span class="c-heart">racing heart</span>, a <span class="c-brain">quieter alpha rhythm</span>,
@@ -87,6 +185,14 @@
       My work is teaching machines to <span class="c-state">read those reports</span>
       reliably, privately, and in the real world.
     </p>
+    <div class="scope" data-reveal aria-hidden="true">
+      <div class="hud">
+        <span class="hud-item heart"><svg class="i"><use href="assets/icons.svg#heart-pulse"/></svg>ECG · wrist <b id="hud-hr">62 bpm</b></span>
+        <span class="hud-item brain"><svg class="i"><use href="assets/icons.svg#brain"/></svg>EEG · in-ear <b id="hud-alpha">α 10.1 Hz</b></span>
+        <span class="hud-item state"><svg class="i"><use href="assets/icons.svg#sparkles"/></svg>state · <b id="hud-state">calm 0.71</b></span>
+      </div>
+      <canvas id="scope-canvas"></canvas>
+    </div>
   </div>
 </section>
 
@@ -158,34 +264,6 @@
         <span><svg class="i"><use href="assets/icons.svg#sparkles"/></svg>state</span>
       </div>
       <canvas id="story-canvas"></canvas>
-    </div>
-  </div>
-</section>
-
-<!-- ================================================================ STATS -->
-<section class="section" style="padding-top:clamp(40px,6vw,80px)" aria-label="At a glance">
-  <div class="wrap">
-    <div class="stats">
-      <div class="stat" data-reveal>
-        <span class="i-badge calm"><svg class="i"><use href="assets/icons.svg#file-text"/></svg></span>
-        <div class="num" data-count="2">2</div>
-        <p>IEEE publications on wearables and stress</p>
-      </div>
-      <div class="stat" data-reveal style="--d:.08s">
-        <span class="i-badge warm"><svg class="i"><use href="assets/icons.svg#trophy"/></svg></span>
-        <div class="num"><span data-count="3">3</span><sup>rd</sup></div>
-        <p>place in a competition hosted by Bending Spoons</p>
-      </div>
-      <div class="stat" data-reveal style="--d:.16s">
-        <span class="i-badge heart"><svg class="i"><use href="assets/icons.svg#rocket"/></svg></span>
-        <div class="num" data-count="2">2</div>
-        <p>international hackathons: Swiss AI Hackathon &amp; START Hack</p>
-      </div>
-      <div class="stat" data-reveal style="--d:.24s">
-        <span class="i-badge brain"><svg class="i"><use href="assets/icons.svg#flask"/></svg></span>
-        <div class="num"><span data-count="2">2</span><sup>+</sup></div>
-        <p>years of research at NECSTLab, Politecnico di Milano</p>
-      </div>
     </div>
   </div>
 </section>
@@ -443,18 +521,15 @@
 <section class="section" id="about" style="padding-top:0">
   <div class="wrap">
     <div class="about-grid">
-      <figure class="photo" data-reveal>
-        <img src="assets/img/angelo.jpg" alt="Angelo holding his Politecnico di Milano Biomedical Engineering diploma" width="960" height="1200" loading="lazy">
-        <figcaption><svg class="i"><use href="assets/icons.svg#sparkles"/></svg><span>Exhibit A: the BSc diploma. Exhibit B: the face of someone who hasn't yet realized a Master's comes next.</span></figcaption>
-      </figure>
-
-      <div class="about-copy" data-reveal style="--d:.1s">
+      <div class="about-copy" data-reveal>
         <span class="eyebrow"><svg class="i"><use href="assets/icons.svg#heart"/></svg>About me</span>
-        <h2 class="headline">Hi, I'm Angelo.<br><span class="grad">Mostly harmless.</span></h2>
+        <h2 class="headline">Off the record.<br><span class="grad">Mostly harmless.</span></h2>
         <p>I'm a <strong>biomedical engineer</strong>, which is a fancy way of saying I ask wearables how people feel, and they answer in millivolts.</p>
         <p>I trained at <strong>Politecnico di Milano</strong> and I'm now in <strong>Zurich</strong>, where the trains run on time and I'm trying hard to do the same with my thesis.</p>
         <p>When I'm not staring at spectrograms, I'm probably mentoring, organizing a workshop, or explaining to friends why their smartwatch's "stress score" is more complicated than it looks.</p>
-
+        <p class="aside"><svg class="i"><use href="assets/icons.svg#sparkles"/></svg><span>The photo up top is my BSc graduation. The diploma is real; the confidence was mostly adrenaline.</span></p>
+      </div>
+      <div data-reveal style="--d:.1s">
         <div class="monitor" id="monitor">
           <div class="monitor-head">
             <b><svg class="i"><use href="assets/icons.svg#activity"/></svg>Angelo · live state estimate</b>

@@ -160,14 +160,14 @@
     addEventListener('scroll', update, { passive: true }); addEventListener('resize', update); update();
   }
 
-  /* ------------------------------------------------------------------ hero: live bedside-monitor sweep */
-  const heroCanvas = $('#hero-canvas');
-  if (heroCanvas) {
-    const { ctx, size } = setupCanvas(heroCanvas);
+  /* ------------------------------------------------------------------ research focus: live bedside-monitor sweep */
+  const scopeCanvas = $('#scope-canvas');
+  if (scopeCanvas) {
+    const { ctx, size } = setupCanvas(scopeCanvas);
     const traces = [
-      { fn: ecg,       rgb: '255,55,95',   y: 0.30, amp: 0.085, lw: 1.6 },
-      { fn: eeg,       rgb: '191,90,242',  y: 0.56, amp: 0.045, lw: 1.3 },
-      { fn: slowState, rgb: '100,210,255', y: 0.82, amp: 0.05,  lw: 1.4 },
+      { fn: ecg,       rgb: '255,55,95',   y: 0.40, amp: 0.20, lw: 1.8 },
+      { fn: eeg,       rgb: '191,90,242',  y: 0.66, amp: 0.08, lw: 1.4 },
+      { fn: slowState, rgb: '100,210,255', y: 0.86, amp: 0.06, lw: 1.6 },
     ];
     const speed = 150; // px per second
     const draw = (t) => {
@@ -175,7 +175,7 @@
       ctx.clearRect(0, 0, w, h);
       const span = w / speed, head = ((t * speed) % w), chunk = 14;
       traces.forEach((tr) => {
-        const base = tr.y * h, A = tr.amp * h * (w < 600 ? 1.2 : 1);
+        const base = tr.y * h, A = tr.amp * h;
         ctx.lineWidth = tr.lw; ctx.lineJoin = 'round';
         for (let x0 = 0; x0 < w; x0 += chunk) {
           // age of the sample at x0: 0 at the sweep head, growing behind it
@@ -198,7 +198,7 @@
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(head, y, 14, 0, TAU); ctx.fill();
       });
     };
-    loop(heroCanvas, draw);
+    loop(scopeCanvas, draw);
 
     // slowly drifting HUD readouts
     const hr = $('#hud-hr'), al = $('#hud-alpha'), st = $('#hud-state');
