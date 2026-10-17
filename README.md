@@ -1,29 +1,37 @@
+# Angelo Guarnerio — personal site
 
-# Portfolio site (personalized)
+Source of [ng3l0.github.io/AngeloGuarnerio](https://ng3l0.github.io/AngeloGuarnerio/).
+Plain HTML, CSS and JavaScript: no build step and no dependencies. Push to `main` and GitHub Pages publishes it.
 
-This repository contains a small portfolio site. I updated the root `index.html` and `style.css` to a blue/light-blue gradient theme, added a replaceable profile placeholder, and organized projects into topic blocks.
+## Structure
 
-Files changed/added:
+```text
+index.html            home: hero, now, research, projects, publications, path, about, writing, contact
+blog/index.html       article list (reads posts/index.json)
+blog/post.html        article reader (renders posts/<slug>.md)
+posts/                articles in Markdown + index.json registry
+404.html              self-contained "flatline" page
+assets/
+  css/site.css        all styles (design tokens at the top)
+  js/site.js          animations: hero signals, scroll story, tile graphics, filters
+  icons.svg           icon sprite → <svg class="i"><use href="assets/icons.svg#heart"/></svg>
+  img/                photo + social preview image
+  favicon.svg
+```
 
-- `index.html` — portfolio homepage with hero and project blocks
-- `style.css` — new gradient styles and responsive layout
-- `assets/profile.svg` — placeholder profile image (replace with your photo)
-- `404.html` and `.nojekyll` remain available if you used them earlier
+## Common edits
 
-How to customize:
+- **Add a project:** copy an `<article class="card">` block in the `#projects` section of `index.html`.
+  `data-kind="course"` or `data-kind="hack"` controls the filter.
+- **Add a publication:** copy an `<li class="pub">` block in `#publications`.
+- **Icons:** every symbol id in `assets/icons.svg` (heart, brain, ear, watch, flask, trophy, …) can be used anywhere.
+- **Colours:** `--heart` (wrist/cardiac), `--brain` (EEG), `--state` (models) in `site.css` are used consistently across the site.
+- **Write an article:** see `ISTRUZIONI_BLOG.md`.
 
-- Replace the profile image: open `assets/profile.JPG` and replace it with your own image named `profile.svg` (or update the `<img>` src in `index.html`). For an actual photo, add a JPEG/PNG and change `src` to `assets/your-photo.jpg`.
-- Edit project blocks in `index.html` under the `<main id="projects">` section. Each `.block` groups projects for a topic.
+## Preview locally
 
-Publish:
+```bash
+python3 -m http.server 8000   # then open http://localhost:8000
+```
 
-1. Commit and push changes to `main`.
-2. In GitHub → Settings → Pages, set Source to `main` branch and the root folder (or `/docs` if you move the site there).
-3. Save — GitHub will show the site URL.
-
-If you want, I can:
-
-- replace the SVG with an uploaded photo and resize it,
-- add links to real projects from your repo,
-- or create a GitHub Actions workflow to publish to `gh-pages` automatically.
-
+The icons and the blog load files with `fetch`/`<use>`, so open the site through a local server rather than double-clicking `index.html`.

@@ -1,244 +1,102 @@
 # Guida al Blog — Angelo Guarnerio
 
-Questa guida ti spiega come gestire il blog del tuo sito in modo semplice, senza toccare codice complesso.
-
----
-
-## Come funziona (in breve)
+Il blog si attiva da solo: finché `posts/index.json` è vuoto, la pagina mostra un
+messaggio "in arrivo". Appena aggiungi il primo articolo compare la lista, e gli ultimi
+3 articoli appaiono anche nella sezione **Writing** della home. Non c'è niente da
+"accendere" a mano.
 
 ```
 posts/
   index.json        ← il registro di tutti gli articoli
-  nome-articolo.md  ← il testo dell'articolo in formato Markdown
-
+  nome-articolo.md  ← il testo dell'articolo in Markdown
 blog/
-  index.html        ← la pagina del blog (lista articoli)
-  post.html         ← il lettore di articoli (non toccare)
+  index.html        ← lista articoli (non toccare)
+  post.html         ← lettore articoli (non toccare)
 ```
-
-Ogni articolo è un file `.md` (Markdown) nella cartella `posts/`.
-Il file `posts/index.json` dice al sito quali articoli esistono e come si chiamano.
 
 ---
 
-## FASE 1 — Rimuovere il "Coming Soon"
+## Pubblicare un articolo (3 passi)
 
-Quando sei pronto a mostrare gli articoli, devi fare **due piccole modifiche** al file `blog/index.html`.
+### 1 — Crea il file Markdown
 
-### Passo 1 — Elimina la sezione "Coming Soon"
-
-Apri `blog/index.html` con un editor di testo (es. VS Code).
-Trova e **cancella** tutto il blocco seguente (circa righe 70–90):
-
-```html
-<!-- ══════════════════════════════════════════════
-     SEZIONE COMING SOON
-     Quando sei pronto, rimuovi tutto questo blocco
-     e togli "hidden" dalla sezione posts-section.
-══════════════════════════════════════════════ -->
-<section class="cs-section" id="coming-soon">
-  ...
-</section>
-```
-
-Cancella dall'apertura del commento `<!-- ═══...` fino a `</section>` incluso.
-
-### Passo 2 — Rendi visibile la lista degli articoli
-
-Sempre in `blog/index.html`, trova questa riga:
-
-```html
-<div class="posts-section container" id="posts-section" hidden>
-```
-
-Rimuovi solo la parola `hidden`, lasciando il resto:
-
-```html
-<div class="posts-section container" id="posts-section">
-```
-
-**Fatto!** Salva il file, fai il commit e il blog sarà visibile con tutti gli articoli presenti in `posts/index.json`.
-
----
-
-## FASE 2 — Creare un nuovo articolo
-
-Ci sono **tre passi** per pubblicare un nuovo articolo.
-
-### Passo 1 — Crea il file Markdown
-
-Crea un nuovo file nella cartella `posts/`.
-Il nome deve essere in minuscolo, senza spazi (usa i trattini), con estensione `.md`.
-
-**Esempio:** `posts/la-mia-passione-per-il-trekking.md`
-
-Il contenuto del file deve iniziare con il titolo così:
+Crea `posts/nome-articolo.md`: minuscole, trattini al posto degli spazi.
+La prima riga è il titolo:
 
 ```markdown
-# La mia passione per il trekking
+# Perché il tuo smartwatch non sa davvero quanto sei stressato
 
-Scrivi qui il tuo articolo. Puoi usare la formattazione Markdown:
+Testo dell'articolo, con **grassetto**, *corsivo* e [link](https://esempio.com).
 
-## Sottotitolo
+## Un sottotitolo
 
-Testo normale, **grassetto**, *corsivo*.
+- elenco
+- puntato
 
-- Lista
-- Di
-- Elementi
+> Una citazione.
 
-> Una citazione in evidenza.
-
-E così via...
+![Didascalia](../assets/img/nome-immagine.jpg)
 ```
 
-### Passo 2 — Registra l'articolo in `posts/index.json`
+Le immagini vanno in `assets/img/` e si richiamano con `../assets/img/…`.
+Il tempo di lettura viene calcolato in automatico.
 
-Apri il file `posts/index.json` e aggiungi una riga per il tuo articolo.
-
-Se il file è ancora vuoto (appena creato), sarà così:
-
-```json
-[
-
-]
-```
-
-Aggiungici la voce del tuo articolo:
+### 2 — Registralo in `posts/index.json`
 
 ```json
 [
   {
-    "slug": "la-mia-passione-per-il-trekking",
-    "title": "La mia passione per il trekking",
-    "date": "2026-03-24",
-    "description": "Una breve frase di descrizione dell'articolo, che appare nell'anteprima."
+    "slug": "nome-articolo",
+    "title": "Perché il tuo smartwatch non sa davvero quanto sei stressato",
+    "date": "2026-11-02",
+    "description": "Una frase che appare nell'anteprima."
   }
 ]
 ```
 
-Se hai **già altri articoli** e vuoi aggiungerne uno, separa le voci con una virgola:
+Per aggiungerne altri, separa le voci con una virgola (niente virgola dopo l'ultima).
 
-```json
-[
-  {
-    "slug": "articolo-precedente",
-    "title": "Articolo precedente",
-    "date": "2026-01-10",
-    "description": "Descrizione del primo articolo."
-  },
-  {
-    "slug": "la-mia-passione-per-il-trekking",
-    "title": "La mia passione per il trekking",
-    "date": "2026-03-24",
-    "description": "Una breve frase di descrizione dell'articolo."
-  }
-]
-```
+> ⚠️ `slug` deve essere identico al nome del file `.md`, senza estensione.
 
-> ⚠️ **Attenzione:** lo `"slug"` deve essere identico (uguale carattere per carattere) al nome del file `.md` che hai creato, senza l'estensione `.md`.
-
-### Passo 3 — Pubblica su GitHub
-
-Aggiungi i file, fai commit e push:
+### 3 — Pubblica
 
 ```bash
-git add posts/
-git commit -m "nuovo articolo: la mia passione per il trekking"
+git add posts/ assets/img/
+git commit -m "nuovo articolo: nome-articolo"
 git push
 ```
 
-GitHub Pages aggiornerà il sito automaticamente in pochi secondi.
+GitHub Pages aggiorna il sito in circa un minuto.
 
 ---
 
-## FASE 3 — Eliminare un articolo vecchio
+## Eliminare un articolo
 
-### Passo 1 — Rimuovi la voce da `posts/index.json`
+1. Cancella la sua voce da `posts/index.json` (attenzione alle virgole).
+2. Cancella il file `posts/nome-articolo.md`.
+3. `git add -A posts/ && git commit -m "rimosso articolo" && git push`
 
-Apri `posts/index.json` e cancella il blocco `{...}` che corrisponde all'articolo che vuoi eliminare.
-Ricordati di non lasciare virgole di troppo — l'ultimo elemento dell'array non deve avere la virgola finale.
+---
 
-**Prima (due articoli):**
-```json
-[
-  {
-    "slug": "articolo-da-eliminare",
-    "title": "Articolo da eliminare",
-    "date": "2026-01-01",
-    "description": "..."
-  },
-  {
-    "slug": "articolo-da-tenere",
-    "title": "Articolo da tenere",
-    "date": "2026-03-24",
-    "description": "..."
-  }
-]
-```
+## Sintassi Markdown in breve
 
-**Dopo (un articolo rimasto):**
-```json
-[
-  {
-    "slug": "articolo-da-tenere",
-    "title": "Articolo da tenere",
-    "date": "2026-03-24",
-    "description": "..."
-  }
-]
-```
+| Cosa              | Come                                  |
+|-------------------|---------------------------------------|
+| Sottotitolo       | `## Sottotitolo`                      |
+| Grassetto/corsivo | `**grassetto**`, `*corsivo*`          |
+| Link              | `[testo](https://url.com)`            |
+| Immagine          | `![descrizione](../assets/img/x.jpg)` |
+| Elenco            | `- elemento` oppure `1. elemento`     |
+| Citazione         | `> testo`                             |
+| Codice            | `` `inline` `` o blocchi ```` ```python ```` |
+| Tabella           | sintassi GitHub (`\| a \| b \|`)      |
+| Separatore        | `---`                                 |
 
-### Passo 2 — Elimina il file `.md`
-
-Cancella il file dalla cartella `posts/`. Ad esempio: `posts/articolo-da-eliminare.md`.
-
-### Passo 3 — Pubblica su GitHub
+## Anteprima in locale
 
 ```bash
-git add posts/
-git commit -m "rimosso articolo: articolo-da-eliminare"
-git push
+python3 -m http.server 8000
 ```
 
----
-
-## Breve guida alla sintassi Markdown
-
-Quando scrivi un articolo, puoi usare questi elementi:
-
-| Cosa vuoi fare         | Cosa scrivi                         |
-|------------------------|-------------------------------------|
-| Titolo principale      | `# Titolo`                          |
-| Sottotitolo            | `## Sottotitolo`                    |
-| Sottosottotitolo       | `### Titolo piccolo`                |
-| **Grassetto**          | `**testo in grassetto**`            |
-| *Corsivo*              | `*testo in corsivo*`                |
-| Link                   | `[testo del link](https://url.com)` |
-| Immagine               | `![descrizione](percorso/foto.jpg)` |
-| Lista puntata          | `- elemento`                        |
-| Lista numerata         | `1. primo punto`                    |
-| Citazione              | `> testo della citazione`           |
-| Codice inline          | `` `codice` ``                      |
-| Blocco di codice       | ` ```python ` (seguito dal codice)  |
-| Linea separatrice      | `---`                               |
-
----
-
-## Struttura completa del progetto (per riferimento)
-
-```
-AngeloGuarnerio/
-├── index.html              ← Portfolio principale
-├── style.css               ← Stili condivisi
-├── 404.html
-├── assets/
-│   └── profile.JPG
-├── blog/
-│   ├── index.html          ← Pagina blog (lista articoli)
-│   └── post.html           ← Lettore articoli (non toccare)
-├── posts/
-│   ├── index.json          ← Registro degli articoli ← MODIFICA QUI
-│   └── nome-articolo.md    ← I tuoi articoli vanno qui
-└── ISTRUZIONI_BLOG.md      ← Questa guida
-```
+Poi apri <http://localhost:8000/blog/> (serve un server locale: aprendo il file con
+doppio clic, il blog non riesce a leggere gli articoli).
