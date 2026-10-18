@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg">
   <!--
     Icon sprite (line icons, 24×24, stroke = currentColor).
-    Usage: <svg class="icon"><use href="/assets/icons.svg#heart"/></svg>
+    Usage: <svg class="icon"><use href="/assets/icons.svg#heart"/>  <symbol id="substack" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M4 3h16v2.6H4zM4 7.7h16v2.6H4zM4 12.4h16V22l-8-4.6L4 22z"/></symbol>
+</svg>
     Many shapes adapted from Lucide (ISC licence, lucide.dev).
   -->
   <symbol id="heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
@@ -53,4 +54,5 @@
   <symbol id="check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="battery" viewBox="0 0 24 24"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2M10 11v2"/></symbol>
   <symbol id="train" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M12 3v8"/><path d="m8 19-2 3M18 22l-2-3"/><path d="M8 15h.01M16 15h.01"/></symbol>
+  <symbol id="substack" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M4 3h16v2.6H4zM4 7.7h16v2.6H4zM4 12.4h16V22l-8-4.6L4 22z"/></symbol>
 </svg>

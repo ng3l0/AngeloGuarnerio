@@ -1,15 +1,18 @@
 # Angelo Guarnerio — personal site
 
 Source of [ng3l0.github.io/AngeloGuarnerio](https://ng3l0.github.io/AngeloGuarnerio/).
-Plain HTML, CSS and JavaScript: no build step and no dependencies. Push to `main` and GitHub Pages publishes it.
+Plain HTML, CSS and JavaScript, no dependencies. Push to `main` and the GitHub Actions workflow publishes it
+(Settings → Pages → Source must be **GitHub Actions**). Articles are written on
+[Substack](https://angeloguarnerio.substack.com) and pulled in automatically once a day.
 
 ## Structure
 
 ```text
 index.html            home: intro (bio + contacts + highlights), news, research focus, now, research, projects, publications, path, about, writing, contact
-blog/index.html       article list (reads posts/index.json)
-blog/post.html        article reader (renders posts/<slug>.md)
-posts/                articles in Markdown + index.json registry
+blog/index.html       all Substack articles + subscribe card
+data/substack.json    article list, generated at deploy time (don't edit)
+scripts/fetch_substack.py   reads the Substack RSS feed → data/substack.json
+.github/workflows/deploy.yml  builds + deploys on every push and once a day
 404.html              self-contained "flatline" page
 assets/
   css/site.css        all styles (design tokens at the top)
@@ -27,7 +30,8 @@ assets/
 - **Add news:** copy an `<li>` in the `#news` list (newest first, keep it to about 5 items).
 - **Icons:** every symbol id in `assets/icons.svg` (heart, brain, ear, watch, flask, trophy, …) can be used anywhere.
 - **Colours:** `--heart` (wrist/cardiac), `--brain` (EEG), `--state` (models) in `site.css` are used consistently across the site.
-- **Write an article:** see `ISTRUZIONI_BLOG.md`.
+- **Write an article:** publish it on Substack; see `ISTRUZIONI_BLOG.md`.
+- **Refresh articles now:** Actions tab → Deploy site → Run workflow.
 
 ## Preview locally
 
@@ -35,4 +39,5 @@ assets/
 python3 -m http.server 8000   # then open http://localhost:8000
 ```
 
-The icons and the blog load files with `fetch`/`<use>`, so open the site through a local server rather than double-clicking `index.html`.
+To preview your real articles locally, run `python3 scripts/fetch_substack.py` first.
+The icons and the article list load files with `fetch`/`<use>`, so open the site through a local server rather than double-clicking `index.html`.

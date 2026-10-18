@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Writing — Angelo Guarnerio</title>
-  <meta name="description" content="Articles by Angelo Guarnerio about research, wearables, biosignals and life between Milan and Zurich.">
+  <meta name="description" content="Articles by Angelo Guarnerio about research, wearables, biosignals and life between Milan and Zurich, published on Substack.">
+  <link rel="canonical" href="https://ng3l0.github.io/AngeloGuarnerio/blog/">
   <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -43,13 +44,27 @@
     <div class="wrap">
       <span class="eyebrow" data-reveal><svg class="i"><use href="../assets/icons.svg#pen"/></svg>Writing</span>
       <h1 class="headline" data-reveal style="--d:.06s">Notes, ideas<br><span class="grad">and passions.</span></h1>
-      <p class="sub" data-reveal style="--d:.12s">Research explained without the jargon, wearables put to the test, and the occasional story from life between Milan and Zurich.</p>
+      <p class="sub" data-reveal style="--d:.12s">Research explained without the jargon, wearables put to the test, and the occasional story from life between Milan and Zurich. Published on Substack.</p>
     </div>
   </section>
 
   <section class="blog-list">
-    <div class="wrap" id="posts">
-      <div class="loading"><span class="spinner"></span>Loading articles…</div>
+    <div class="wrap">
+      <div id="posts" data-substack="../data/substack.json" data-icons="../assets/icons.svg">
+        <div class="empty">
+          <span class="i-badge brain"><svg class="i"><use href="../assets/icons.svg#pen"/></svg></span>
+          <h2>The first articles are on their way.</h2>
+          <p>Currently in peer review with my harshest critic: me.</p>
+        </div>
+      </div>
+
+      <div class="subscribe" data-reveal>
+        <div>
+          <h2>Get new articles by email.</h2>
+          <p>Subscribe on Substack and every new piece lands in your inbox. No spam, unsubscribe anytime.</p>
+        </div>
+        <a class="btn btn-primary" href="https://angeloguarnerio.substack.com/subscribe" target="_blank" rel="noopener"><svg class="i"><use href="../assets/icons.svg#substack"/></svg>Subscribe on Substack</a>
+      </div>
     </div>
   </section>
 </main>
@@ -61,42 +76,11 @@
       <a href="mailto:angelo.guarnerio@gmail.com" aria-label="Email"><svg class="i"><use href="../assets/icons.svg#mail"/></svg></a>
       <a href="https://www.linkedin.com/in/angelo-guarnerio" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="i"><use href="../assets/icons.svg#linkedin"/></svg></a>
       <a href="https://github.com/ng3l0" target="_blank" rel="noopener" aria-label="GitHub"><svg class="i"><use href="../assets/icons.svg#github"/></svg></a>
+      <a href="https://angeloguarnerio.substack.com" target="_blank" rel="noopener" aria-label="Substack"><svg class="i"><use href="../assets/icons.svg#substack"/></svg></a>
     </nav>
   </div>
 </footer>
 
 <script src="../assets/js/site.js" defer></script>
-<script>
-  // Articles are listed in posts/index.json; with an empty list the page shows a "coming soon" card.
-  (() => {
-    const root = document.getElementById('posts');
-    const esc = (s = '') => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    const fmt = (d) => new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-    const icon = (n) => `<svg class="i"><use href="../assets/icons.svg#${n}"/></svg>`;
-    const empty = () => {
-      root.innerHTML = `
-        <div class="empty">
-          <span class="i-badge brain">${icon('pen')}</span>
-          <h2>The first articles are on their way.</h2>
-          <p>Currently in peer review with my harshest critic: me.</p>
-          <div style="margin-top:24px"><a class="btn btn-ghost" href="../">${icon('arrow-left')} Back home</a></div>
-        </div>`;
-    };
-    fetch('../posts/index.json')
-      .then((r) => r.json())
-      .then((posts) => {
-        if (!Array.isArray(posts) || !posts.length) return empty();
-        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-        root.innerHTML = `<div class="posts">${posts.map((p) => `
-          <article class="post-card">
-            <time datetime="${esc(p.date)}">${icon('calendar')}${fmt(p.date)}</time>
-            <h3>${esc(p.title)}</h3>
-            <p>${esc(p.description)}</p>
-            <a class="link stretched" href="post.html?post=${encodeURIComponent(p.slug)}">Read the article ${icon('arrow-right')}</a>
-          </article>`).join('')}</div>`;
-      })
-      .catch(empty);
-  })();
-</script>
 </body>
 </html>

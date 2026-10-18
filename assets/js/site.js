@@ -536,23 +536,28 @@
     watch(monitor, (v) => { clearInterval(id); if (v) { tick(); id = setInterval(tick, 2600); } });
   }
 
-  /* ------------------------------------------------------------------ latest writing */
-  const writing = $('#writing-list');
-  if (writing) {
-    fetch('posts/index.json').then((r) => r.json()).then((posts) => {
-      if (!Array.isArray(posts) || !posts.length) return;
+  /* ------------------------------------------------------------------ Substack articles */
+  // data/substack.json is generated at deploy time by scripts/fetch_substack.py.
+  // With no articles yet, the box keeps its "coming soon" content.
+  $$('[data-substack]').forEach((box) => {
+    const icon = (n) => `<svg class="i"><use href="${box.dataset.icons}#${n}"/></svg>`;
+    const esc = (s = '') => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const fmt = (d) => new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    const safe = (u) => (/^https:\/\//.test(u || '') ? u : '');
+    fetch(box.dataset.substack).then((r) => r.json()).then((posts) => {
+      posts = (Array.isArray(posts) ? posts : []).filter((p) => p.title && safe(p.url));
+      if (!posts.length) return;
       posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-      const esc = (s = '') => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-      const fmt = (d) => new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-      writing.innerHTML = `<div class="posts">${posts.slice(0, 3).map((p) => `
+      box.innerHTML = `<div class="posts">${posts.slice(0, +box.dataset.limit || posts.length).map((p) => `
         <article class="post-card">
-          <time datetime="${esc(p.date)}"><svg class="i"><use href="assets/icons.svg#calendar"/></svg>${fmt(p.date)}</time>
+          ${safe(p.image) ? `<img class="post-cover" src="${esc(p.image)}" alt="" loading="lazy">` : ''}
+          <time datetime="${esc(p.date)}">${icon('calendar')}${fmt(p.date)}</time>
           <h3>${esc(p.title)}</h3>
-          <p>${esc(p.description)}</p>
-          <a class="link stretched" href="blog/post.html?post=${encodeURIComponent(p.slug)}">Read <svg class="i"><use href="assets/icons.svg#arrow-right"/></svg></a>
+          ${p.description ? `<p>${esc(p.description)}</p>` : ''}
+          <a class="link stretched" href="${esc(p.url)}" target="_blank" rel="noopener">Read on Substack ${icon('arrow-up-right')}</a>
         </article>`).join('')}</div>`;
     }).catch(() => {});
-  }
+  });
 
   const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 })();
