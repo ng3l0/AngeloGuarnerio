@@ -116,12 +116,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .btn-primary:hover { background: #fff; transform: translateY(-1px); }
 .btn-ghost { border: 1px solid var(--line-2); color: var(--fg); }
 .btn-ghost:hover { border-color: rgba(255, 255, 255, .35); background: rgba(255, 255, 255, .05); }
+.btn-icon { padding: .82em; }
+.btn-icon .i { width: 1.15em; height: 1.15em; }
+.btn-icon:hover .i { transform: none; }
 .link {
   display: inline-flex; align-items: center; gap: .35em;
   color: var(--link); font-weight: 500;
 }
 .link:hover { text-decoration: underline; text-underline-offset: 3px; }
 .link .i { width: .95em; height: .95em; }
+/* organisation names inside text: readable as text, clearly clickable */
+a.org {
+  color: var(--fg); font-weight: 600;
+  text-decoration: underline; text-decoration-color: var(--line-2);
+  text-underline-offset: 3px; text-decoration-thickness: 1px;
+  transition: text-decoration-color .2s, color .2s;
+}
+a.org:hover { color: #fff; text-decoration-color: var(--fg); }
+.now-link { margin-top: 28px; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {

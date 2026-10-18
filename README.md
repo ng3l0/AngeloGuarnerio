@@ -30,6 +30,8 @@ assets/
 - **Add news:** copy an `<li>` in the `#news` list (newest first, keep it to about 5 items).
 - **Icons:** every symbol id in `assets/icons.svg` (heart, brain, ear, watch, flask, trophy, …) can be used anywhere.
 - **Colours:** `--heart` (wrist/cardiac), `--brain` (EEG), `--state` (models) in `site.css` are used consistently across the site.
+- **Update the CV:** overwrite `assets/pdf/CV_GUARNERIO_ANGELO_1026__web_version_.pdf` with the new export (same file name), or
+  rename it and update the 3 links in `index.html` (search for `CV_GUARNERIO`). Visitors always download it as `Angelo_Guarnerio_CV.pdf`.
 - **Write an article:** publish it on Substack; see `ISTRUZIONI_BLOG.md`.
 - **Refresh articles now:** Actions tab → Deploy site → Run workflow.
 
